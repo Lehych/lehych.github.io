@@ -10,6 +10,7 @@
     "gulp": "",
     "gulp-concat": "",
     "gulp-babel": "",
+    "gulp-rename": "",
     "gulp-sourcemaps": "",
     "gulp-util": "",
     "gulp-watch": "",
