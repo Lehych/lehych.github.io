@@ -4,14 +4,23 @@
 var gulp = require("gulp");
 var babel = require("gulp-babel");
 
-// gulp.task('watch', ['watch-js']);
 
-
-gulp.task('build-all', function (callback) {
+gulp.task('build-js', function(){
   return gulp.src("static/es6/*.js")
     .pipe(babel())
     .pipe(gulp.dest("static/js/"));
-});
+})
+
+gulp.task('watch-js', function(){
+    return gulp.watch(
+        'static/es6/**/*.js',
+        ['build-js']);
+})
+
+gulp.task('watch', ['watch-js']);
 
 
-gulp.task("default", ['build-all']);
+gulp.task('build', ['build-js']);
+
+
+gulp.task('default', ['build']);
